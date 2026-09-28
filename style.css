@@ -1,0 +1,969 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: #050505;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 94px 94px;
+
+    background-attachment: fixed;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 6%;
+
+    z-index: 1000;
+
+    background: rgba(5, 5, 5, 0.88);
+
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+
+/* =========================
+   HERO - CINEMATIC
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 8%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: transparent;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 80% 35%,
+            rgba(90, 70, 255, 0.12),
+            transparent 30%
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.hero-content {
+.hero h1,
+.hero h2,
+.hero .description,
+.hero .small-text {
+    position: relative;
+    z-index: 5;
+}
+}
+
+.hero-content {
+    max-width: 1000px;
+}
+
+.small-text {
+    color: #999;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 12vw, 180px);
+    line-height: 0.85;
+    letter-spacing: -8px;
+}
+
+.hero h1 span {
+    color: transparent;
+
+    -webkit-text-stroke: 1px white;
+}
+
+.hero h2 {
+    margin-top: 40px;
+
+    font-size: clamp(25px, 4vw, 55px);
+
+    line-height: 1.1;
+}
+
+.description {
+    margin-top: 30px;
+
+    max-width: 600px;
+
+    color: #b5b5b5;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+    gap: 20px;
+
+    margin-top: 40px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    border: 1px solid white;
+
+    color: black;
+    background: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================
+   SCROLL TEXT
+========================= */
+
+.scroll-text {
+    position: absolute;
+
+    bottom: 35px;
+    right: 6%;
+
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section {
+    min-height: 100vh;
+
+    padding: 150px 8%;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    background: transparent;
+}
+
+.section-number {
+    color: #777;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: clamp(60px, 10vw, 150px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+}
+
+.section-title span {
+    color: transparent;
+
+    -webkit-text-stroke: 1px white;
+}
+
+.section-description {
+    max-width: 650px;
+
+    margin-top: 60px;
+
+    color: #999;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+}
+
+.section-heading {
+    font-size: clamp(50px, 8vw, 120px);
+
+    margin-bottom: 80px;
+
+    letter-spacing: -4px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.skill {
+    border: 1px solid #333;
+
+    padding: 40px 20px;
+
+    min-height: 130px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    transition: 0.4s;
+}
+
+.skill:hover {
+    background: white;
+
+    color: black;
+
+    transform: translateY(-8px);
+}
+
+.skill span {
+    font-size: 18px;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.project-card {
+    border: 1px solid #292929;
+
+    padding: 45px;
+
+    min-height: 350px;
+
+    position: relative;
+
+    transition: 0.4s;
+}
+
+.project-card:hover {
+    border-color: white;
+
+    transform: translateY(-10px);
+}
+
+.project-number {
+    color: #666;
+
+    font-size: 14px;
+}
+
+.project-card h3 {
+    font-size: 35px;
+
+    margin-top: 60px;
+}
+
+.project-card p {
+    color: #999;
+
+    line-height: 1.7;
+
+    margin-top: 25px;
+}
+
+.project-tech {
+    margin-top: 30px;
+
+    color: #aaa;
+
+    font-size: 13px;
+}
+
+.project-link {
+    position: absolute;
+
+    bottom: 35px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    min-height: 80vh;
+
+    padding: 150px 8%;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    text-align: center;
+
+    background: transparent;
+}
+
+.contact h2 {
+    font-size: clamp(60px, 11vw, 170px);
+
+    line-height: 0.9;
+
+    letter-spacing: -7px;
+
+    margin: 60px 0;
+}
+
+.contact h2 span {
+    color: transparent;
+
+    -webkit-text-stroke: 1px white;
+}
+
+.contact p {
+    color: #999;
+
+    font-size: 18px;
+}
+
+.contact-btn {
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 18px 35px;
+
+    background: white;
+
+    color: black;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    border-top: 1px solid #222;
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 20px 6%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+        padding: 110px 6% 80px;
+        align-items: center;
+        background: transparent;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .small-text {
+        font-size: 11px;
+        letter-spacing: 4px;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 18vw, 100px);
+        line-height: 0.88;
+        letter-spacing: -4px;
+    }
+
+    .hero h2 {
+        margin-top: 30px;
+        font-size: clamp(24px, 7vw, 38px);
+        line-height: 1.1;
+    }
+
+    .description {
+        margin-top: 25px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* BUTTONS */
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* SECTIONS */
+
+    .section {
+        min-height: auto;
+        padding: 100px 6%;
+        background: transparent;
+    }
+
+    .section-number {
+        margin-bottom: 35px;
+    }
+
+    .section-title {
+        font-size: clamp(55px, 15vw, 100px);
+        letter-spacing: -3px;
+    }
+
+    .section-description {
+        margin-top: 35px;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    /* SKILLS */
+
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .skill {
+        min-height: 100px;
+        padding: 30px 15px;
+    }
+
+    /* PROJECTS */
+
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .project-card {
+        padding: 28px;
+        min-height: 330px;
+    }
+
+    .project-card h3 {
+        font-size: 28px;
+        margin-top: 45px;
+    }
+
+    .project-card p {
+        font-size: 15px;
+    }
+
+    .project-image {
+        height: 190px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+        min-height: 70vh;
+        padding: 100px 6%;
+        background: transparent;
+    }
+
+    .contact h2 {
+        font-size: clamp(55px, 14vw, 100px);
+        letter-spacing: -4px;
+    }
+
+    .contact p {
+        font-size: 16px;
+    }
+
+    /* THREE.JS BACKGROUND */
+
+    #three-bg {
+        width: 100vw;
+        height: 100svh;
+        opacity: 0.75;
+    }
+}
+
+
+/* =================================
+   CINEMATIC HERO EFFECTS
+================================= */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 80% 35%,
+            rgba(90, 70, 255, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(0, 180, 255, 0.08),
+            transparent 25%
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* Dark cinematic overlay */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.15)
+    );
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Keep content above everything */
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 1000px;
+}
+
+/* PROJECT IMAGE */
+
+.project-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+
+    margin-top: 25px;
+
+    border: 1px solid #333;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.03);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    margin-top: 70px;
+}
+
+.about-text p {
+    color: #999;
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat {
+    border: 1px solid #292929;
+    padding: 30px;
+    transition: 0.4s;
+}
+
+.stat:hover {
+    border-color: white;
+    transform: translateX(8px);
+}
+
+.stat h3 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    color: #888;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/* ABOUT MOBILE */
+
+@media (max-width: 768px) {
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-text p {
+        font-size: 17px;
+    }
+
+}
+
+/* =========================
+   CINEMATIC SITE BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(90, 70, 255, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 70%,
+            rgba(0, 180, 255, 0.08),
+            transparent 30%
+        );
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =================================
+   PROFESSIONAL DATA PORTFOLIO BACKGROUND
+================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            circle at 15% 45%,
+            rgba(0, 180, 255, 0.10),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 78% 25%,
+            rgba(100, 70, 255, 0.12),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(0, 120, 180, 0.05),
+            transparent 35%
+        );
+
+    filter: blur(10px);
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(70, 80, 255, 0.07);
+
+    filter: blur(120px);
+
+    top: 20%;
+    right: 10%;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation: backgroundFloat 10s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundFloat {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-80px, 50px);
+    }
+
+}
+
+/* =========================================
+   THREE.JS CINEMATIC BACKGROUND
+========================================= */
+
+#three-bg {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: block;
+
+    z-index: -10;
+
+    pointer-events: none;
+}
+
+body {
+    background: #030303;
+}
+
+/* Keep website content above the 3D background */
+
+.navbar {
+    z-index: 1000;
+}
+
+.hero,
+.section,
+.contact,
+footer {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================
+   CONTENT ABOVE THREE.JS BACKGROUND
+========================================= */
+
+.navbar,
+.hero-content,
+.section,
+.contact,
+footer {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================
+   THREE.JS BACKGROUND
+========================================= */
+
+#three-bg {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: -10;
+
+    pointer-events: none;
+
+    display: block;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 1000;
+}
+
+.hero,
+.section,
+.contact,
+footer {
+    position: relative;
+    z-index: 2;
+}
